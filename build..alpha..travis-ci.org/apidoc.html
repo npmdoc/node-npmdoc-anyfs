@@ -1,0 +1,1084 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >anyfs (v0.1.6)</a>
+</h1>
+<h4>Super portable filesystem.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.anyfs">module anyfs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs">
+            function <span class="apidocSignatureSpan"></span>anyfs
+            <span class="apidocSignatureSpan">(adapter, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter">
+            function <span class="apidocSignatureSpan">anyfs.</span>MemoryAdapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.addPlugin">
+            function <span class="apidocSignatureSpan">anyfs.</span>addPlugin
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.test">
+            function <span class="apidocSignatureSpan">anyfs.</span>test
+            <span class="apidocSignatureSpan">(fs, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">anyfs.</span>MemoryAdapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">anyfs.</span>_plugins</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">anyfs.</span>anyfs.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.anyfs.MemoryAdapter">module anyfs.MemoryAdapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.MemoryAdapter">
+            function <span class="apidocSignatureSpan">anyfs.</span>MemoryAdapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.anyfs.MemoryAdapter.prototype">module anyfs.MemoryAdapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype._getByPath">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>_getByPath
+            <span class="apidocSignatureSpan">(tree, p)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.delete">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>delete
+            <span class="apidocSignatureSpan">(p, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.deleteDir">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>deleteDir
+            <span class="apidocSignatureSpan">(p, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.list">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>list
+            <span class="apidocSignatureSpan">(p, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.metadata">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>metadata
+            <span class="apidocSignatureSpan">(p, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.mkdir">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>mkdir
+            <span class="apidocSignatureSpan">(p, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.move">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>move
+            <span class="apidocSignatureSpan">(a, b, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.readFile">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>readFile
+            <span class="apidocSignatureSpan">(p, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.MemoryAdapter.prototype.writeFile">
+            function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>writeFile
+            <span class="apidocSignatureSpan">(p, data, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>features</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.anyfs.anyfs">module anyfs.anyfs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.anyfs">
+            function <span class="apidocSignatureSpan">anyfs.</span>anyfs
+            <span class="apidocSignatureSpan">(adapter, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.MemoryAdapter">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.</span>MemoryAdapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.addPlugin">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.</span>addPlugin
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.test">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.</span>test
+            <span class="apidocSignatureSpan">(fs, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">anyfs.anyfs.</span>_plugins</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.anyfs.anyfs.prototype">module anyfs.anyfs.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.prototype._promise">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>_promise
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.prototype.addPlugin">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>addPlugin
+            <span class="apidocSignatureSpan">(plugin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.prototype.error">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>error
+            <span class="apidocSignatureSpan">(code, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.prototype.getPlugins">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>getPlugins
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.anyfs.anyfs.prototype.resolve">
+            function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>resolve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.anyfs" id="apidoc.module.anyfs">module anyfs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs" id="apidoc.element.anyfs.anyfs">
+        function <span class="apidocSignatureSpan"></span>anyfs
+        <span class="apidocSignatureSpan">(adapter, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AnyFS(adapter, options) {
+    this.options = options || {};
+    this.options.cwd = this.options.cwd || &#x27;/&#x27;;
+    this.options.root = this.options.root || &#x27;/&#x27;;
+
+    if (this.options.cwd[0] !== &#x27;/&#x27;) {
+        throw new Error(&#x27;cwd must be absolute(start with &#x22;/&#x22;)&#x27;);
+    }
+
+    if (this.options.root[0] !== &#x27;/&#x27;) {
+        throw new Error(&#x27;root must be absolute(start with &#x22;/&#x22;)&#x27;);
+    }
+
+    if (this.options.root !== &#x27;/&#x27;) {
+        throw new Error(&#x27;root is not supported yet&#x27;);
+    }
+
+    this.adapter = adapter;
+
+    this.adapter.features = this.adapter.features || {};
+
+    this._plugins = [];
+
+    // add global plugins
+    for (var i = 0, length = AnyFS._plugins.length; i &#x3c; length; i++) {
+        this.addPlugin(AnyFS._plugins[i]);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter" id="apidoc.element.anyfs.MemoryAdapter">
+        function <span class="apidocSignatureSpan">anyfs.</span>MemoryAdapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Adapter() {
+    this.tree = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+var AnyFS = require(&#x27;./&#x27;);
+var test = AnyFS.test;
+var adapter = new AnyFS.<span class="apidocCodeKeywordSpan">MemoryAdapter</span>();
+
+var fs = new AnyFS(adapter);
+test(fs);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.addPlugin" id="apidoc.element.anyfs.addPlugin">
+        function <span class="apidocSignatureSpan">anyfs.</span>addPlugin
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addPlugin = function (plugin) {
+    AnyFS._plugins.push(plugin);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+```js
+var AnyFs = require(&#x27;anyfs&#x27;);
+var FtpAdapter = require(&#x27;anyfs-ftp-adapter&#x27;);
+var DropboxAdapter = require(&#x27;anyfs-dropbox-adapter&#x27;);
+var VinylFsPlugin = require(&#x27;anyfs-vinyl-fs-plugin&#x27;);
+AnyFS.<span class="apidocCodeKeywordSpan">addPlugin</span>(new VinylFsPlugin());
+
+var fs1 = new AnyFS(new FtpAdapter({
+    server: &#x27;ftp.example.com&#x27;,
+    username: &#x27;user&#x27;,
+    password: &#x27;password&#x27;,
+}));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.test" id="apidoc.element.anyfs.test">
+        function <span class="apidocSignatureSpan">anyfs.</span>test
+        <span class="apidocSignatureSpan">(fs, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">test = function (fs, options) {
+    options = options || {};
+    var plugins = fs.getPlugins();
+    for (var i = 0; i &#x3c; plugins.length; i++) {
+        if (plugins[i].test) {
+            plugins[i].test(fs, options);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.anyfs.MemoryAdapter" id="apidoc.module.anyfs.MemoryAdapter">module anyfs.MemoryAdapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.MemoryAdapter" id="apidoc.element.anyfs.MemoryAdapter.MemoryAdapter">
+        function <span class="apidocSignatureSpan">anyfs.</span>MemoryAdapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Adapter() {
+    this.tree = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+var AnyFS = require(&#x27;./&#x27;);
+var test = AnyFS.test;
+var adapter = new AnyFS.<span class="apidocCodeKeywordSpan">MemoryAdapter</span>();
+
+var fs = new AnyFS(adapter);
+test(fs);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.anyfs.MemoryAdapter.prototype" id="apidoc.module.anyfs.MemoryAdapter.prototype">module anyfs.MemoryAdapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype._getByPath" id="apidoc.element.anyfs.MemoryAdapter.prototype._getByPath">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>_getByPath
+        <span class="apidocSignatureSpan">(tree, p)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getByPath = function (tree, p) {
+    if (arguments.length === 1) {
+        p = tree;
+        tree = this.tree;
+    }
+    if (p === &#x27;&#x27;) {
+        return null;
+    }
+
+    if (p === &#x27;/&#x27;) {
+        return tree;
+    }
+
+    if (typeof p === &#x27;string&#x27;) {
+        p = p.split(&#x27;/&#x27;);
+    } else if (!util.isArray(p)) {
+        return null;
+    }
+
+    if (p.length === 0) {
+        return null;
+    }
+
+    var current = p.shift();
+    if (current === &#x27;&#x27;) {
+        return this._getByPath(tree, p);
+    }
+
+    if (!tree.hasOwnProperty(current)) {
+        return null;
+    }
+
+    // found
+    if (p.length === 0) {
+        return tree[current];
+    } else {
+        return this._getByPath(tree[current], p);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.delete" id="apidoc.element.anyfs.MemoryAdapter.prototype.delete">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>delete
+        <span class="apidocSignatureSpan">(p, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (p, cb) {
+    var parent = path.dirname(p);
+    var name = path.basename(p);
+
+    var parentNode = this._getByPath(parent);
+
+    if (!isDir(parentNode)) {
+        return cb(error(&#x27;ENOENT&#x27;, p));
+    }
+
+    if (!parentNode.hasOwnProperty(name)) {
+        return cb(error(&#x27;ENOENT&#x27;, p));
+    }
+
+    if (isDir(parentNode[name])) {
+        return cb(error(&#x27;EISDIR&#x27;, p));
+    }
+
+    delete parentNode[name];
+    cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.deleteDir" id="apidoc.element.anyfs.MemoryAdapter.prototype.deleteDir">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>deleteDir
+        <span class="apidocSignatureSpan">(p, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteDir = function (p, cb) {
+    var parent = path.dirname(p);
+    var name = path.basename(p);
+
+    var parentNode = this._getByPath(parent);
+
+    if (!isDir(parentNode)) {
+        return cb(error(&#x27;ENOENT&#x27;));
+    }
+
+    if (!parentNode.hasOwnProperty(name)) {
+        return cb(error(&#x27;ENOENT&#x27;));
+    }
+
+    if (!isDir(parentNode[name])) {
+        return cb(error(&#x27;ENOTDIR&#x27;));
+    }
+
+    delete parentNode[name];
+    cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.list" id="apidoc.element.anyfs.MemoryAdapter.prototype.list">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>list
+        <span class="apidocSignatureSpan">(p, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function (p, cb) {
+    var node = this._getByPath(p);
+    if (!node) {
+        return cb(error(&#x27;ENOENT&#x27;));
+    }
+
+    if (!isDir(node)) {
+        return cb(error(&#x27;ENOTDIR&#x27;));
+    }
+
+    var list = [];
+    for (var name in node) {
+        var metadata = parseMetadata(name, node[name]);
+        list.push(metadata);
+    }
+
+    cb(null, list);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.metadata" id="apidoc.element.anyfs.MemoryAdapter.prototype.metadata">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>metadata
+        <span class="apidocSignatureSpan">(p, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">metadata = function (p, cb) {
+    var node = this._getByPath(p);
+    var name = path.basename(p);
+    if (!node) {
+        return cb(error(&#x27;ENOENT&#x27;));
+    }
+
+    var metadata = parseMetadata(name, node);
+
+    cb(null, metadata);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Promise style API
+fs1.mkdir(&#x27;/doc&#x27;)
+.then(function() {
+    return this.writeFile(&#x27;/doc/index.md&#x27;, &#x22;content&#x22;);
+})
+.then(function() {
+    return this.<span class="apidocCodeKeywordSpan">metadata</span>(&#x27;/doc/index.md&#x27;);
+})
+.done(function(metadata) {
+    console.log(metadata.size);
+}, function(err) {
+    console.log(&#x27;Error occured: &#x27;, err);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.mkdir" id="apidoc.element.anyfs.MemoryAdapter.prototype.mkdir">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>mkdir
+        <span class="apidocSignatureSpan">(p, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkdir = function (p, cb) {
+    var parent = path.dirname(p);
+    var name = path.basename(p);
+
+    var parentNode = this._getByPath(parent);
+
+    if (!isDir(parentNode)) {
+        return cb(error(&#x27;ELOGIC&#x27;));
+    }
+
+    // create directory on parent node
+    if (!parentNode.hasOwnProperty(name)) {
+        parentNode[name] = {};
+        return cb();
+    }
+
+    var node = parentNode[name];
+
+    if (isDir(node)) {
+        return cb();
+    }
+
+    return cb(error(&#x27;EEXIST&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}));
+
+// Copy files across filesystems(requires the vinyl-fs plugin)
+fs1.src(&#x27;/**/*.jpg&#x27;)
+.pipe(fs2.dest(&#x27;/backup/abc/&#x27;));
+
+// Promise style API
+fs1.<span class="apidocCodeKeywordSpan">mkdir</span>(&#x27;/doc&#x27;)
+.then(function() {
+    return this.writeFile(&#x27;/doc/index.md&#x27;, &#x22;content&#x22;);
+})
+.then(function() {
+    return this.metadata(&#x27;/doc/index.md&#x27;);
+})
+.done(function(metadata) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.move" id="apidoc.element.anyfs.MemoryAdapter.prototype.move">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>move
+        <span class="apidocSignatureSpan">(a, b, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">move = function (a, b, cb) {
+    var parentA = path.dirname(a);
+    var parentB = path.dirname(b);
+    var nameA = path.basename(a);
+    var nameB = path.basename(b)
+
+    var aNode = this._getByPath(a);
+    if (!aNode) {
+        return cb(error(&#x27;ENOENT&#x27;));
+    }
+
+    var parentANode = this._getByPath(parentA);
+    var parentBNode = this._getByPath(parentB);
+    if (!parentBNode) {
+        return cb(error(&#x27;ENOENT&#x27;));
+    }
+
+    parentBNode[nameB] = parentANode[nameA];
+    delete parentANode[nameA];
+
+    cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.readFile" id="apidoc.element.anyfs.MemoryAdapter.prototype.readFile">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>readFile
+        <span class="apidocSignatureSpan">(p, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFile = function (p, cb) {
+    var node = this._getByPath(p);
+
+    if (isDir(node)) {
+        return cb(error(&#x27;EISDIR&#x27;, p));
+    }
+
+    cb(null, node);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.MemoryAdapter.prototype.writeFile" id="apidoc.element.anyfs.MemoryAdapter.prototype.writeFile">
+        function <span class="apidocSignatureSpan">anyfs.MemoryAdapter.prototype.</span>writeFile
+        <span class="apidocSignatureSpan">(p, data, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeFile = function (p, data, cb) {
+    var parent = path.dirname(p);
+    var filename = path.basename(p);
+
+    var parentNode = this._getByPath(parent);
+    if (!parentNode) {
+        return cb(error(&#x27;ENOENT&#x27;));
+    }
+
+    var node = this._getByPath(p);
+    if (!node || !isDir(node)) {
+        data.time = new Date();
+        parentNode[filename] = data;
+        return cb();
+    }
+
+    cb(error(&#x27;EISDIR&#x27;, p));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Copy files across filesystems(requires the vinyl-fs plugin)
+fs1.src(&#x27;/**/*.jpg&#x27;)
+.pipe(fs2.dest(&#x27;/backup/abc/&#x27;));
+
+// Promise style API
+fs1.mkdir(&#x27;/doc&#x27;)
+.then(function() {
+    return this.<span class="apidocCodeKeywordSpan">writeFile</span>(&#x27;/doc/index.md&#x27;, &#x22;content&#x22;);
+})
+.then(function() {
+    return this.metadata(&#x27;/doc/index.md&#x27;);
+})
+.done(function(metadata) {
+    console.log(metadata.size);
+}, function(err) {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.anyfs.anyfs" id="apidoc.module.anyfs.anyfs">module anyfs.anyfs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.anyfs" id="apidoc.element.anyfs.anyfs.anyfs">
+        function <span class="apidocSignatureSpan">anyfs.</span>anyfs
+        <span class="apidocSignatureSpan">(adapter, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AnyFS(adapter, options) {
+    this.options = options || {};
+    this.options.cwd = this.options.cwd || &#x27;/&#x27;;
+    this.options.root = this.options.root || &#x27;/&#x27;;
+
+    if (this.options.cwd[0] !== &#x27;/&#x27;) {
+        throw new Error(&#x27;cwd must be absolute(start with &#x22;/&#x22;)&#x27;);
+    }
+
+    if (this.options.root[0] !== &#x27;/&#x27;) {
+        throw new Error(&#x27;root must be absolute(start with &#x22;/&#x22;)&#x27;);
+    }
+
+    if (this.options.root !== &#x27;/&#x27;) {
+        throw new Error(&#x27;root is not supported yet&#x27;);
+    }
+
+    this.adapter = adapter;
+
+    this.adapter.features = this.adapter.features || {};
+
+    this._plugins = [];
+
+    // add global plugins
+    for (var i = 0, length = AnyFS._plugins.length; i &#x3c; length; i++) {
+        this.addPlugin(AnyFS._plugins[i]);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.MemoryAdapter" id="apidoc.element.anyfs.anyfs.MemoryAdapter">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.</span>MemoryAdapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Adapter() {
+    this.tree = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+var AnyFS = require(&#x27;./&#x27;);
+var test = AnyFS.test;
+var adapter = new AnyFS.<span class="apidocCodeKeywordSpan">MemoryAdapter</span>();
+
+var fs = new AnyFS(adapter);
+test(fs);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.addPlugin" id="apidoc.element.anyfs.anyfs.addPlugin">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.</span>addPlugin
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addPlugin = function (plugin) {
+    AnyFS._plugins.push(plugin);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+```js
+var AnyFs = require(&#x27;anyfs&#x27;);
+var FtpAdapter = require(&#x27;anyfs-ftp-adapter&#x27;);
+var DropboxAdapter = require(&#x27;anyfs-dropbox-adapter&#x27;);
+var VinylFsPlugin = require(&#x27;anyfs-vinyl-fs-plugin&#x27;);
+AnyFS.<span class="apidocCodeKeywordSpan">addPlugin</span>(new VinylFsPlugin());
+
+var fs1 = new AnyFS(new FtpAdapter({
+    server: &#x27;ftp.example.com&#x27;,
+    username: &#x27;user&#x27;,
+    password: &#x27;password&#x27;,
+}));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.test" id="apidoc.element.anyfs.anyfs.test">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.</span>test
+        <span class="apidocSignatureSpan">(fs, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">test = function (fs, options) {
+    options = options || {};
+    var plugins = fs.getPlugins();
+    for (var i = 0; i &#x3c; plugins.length; i++) {
+        if (plugins[i].test) {
+            plugins[i].test(fs, options);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.anyfs.anyfs.prototype" id="apidoc.module.anyfs.anyfs.prototype">module anyfs.anyfs.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.prototype._promise" id="apidoc.element.anyfs.anyfs.prototype._promise">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>_promise
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_promise = function () {
+    var args = Array.prototype.slice.call(arguments);
+    var fn;
+    var context = this;
+    if (args.length === 0) {
+        fn = function(cb) {cb()};
+    } else {
+        fn = args.shift();
+        if (util.isArray(fn)) {
+            if (fn.length !== 2) {
+                throw new Error(&#x27;Invalid callback&#x27;);
+            }
+            context = fn[0];
+            fn = fn[1];
+        }
+    }
+
+    return nodefn.lift(fn).apply(context, args).with(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.prototype.addPlugin" id="apidoc.element.anyfs.anyfs.prototype.addPlugin">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>addPlugin
+        <span class="apidocSignatureSpan">(plugin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addPlugin = function (plugin) {
+    this._plugins.push(plugin);
+    plugin.register(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Usage
+
+```js
+var AnyFs = require(&#x27;anyfs&#x27;);
+var FtpAdapter = require(&#x27;anyfs-ftp-adapter&#x27;);
+var DropboxAdapter = require(&#x27;anyfs-dropbox-adapter&#x27;);
+var VinylFsPlugin = require(&#x27;anyfs-vinyl-fs-plugin&#x27;);
+AnyFS.<span class="apidocCodeKeywordSpan">addPlugin</span>(new VinylFsPlugin());
+
+var fs1 = new AnyFS(new FtpAdapter({
+    server: &#x27;ftp.example.com&#x27;,
+    username: &#x27;user&#x27;,
+    password: &#x27;password&#x27;,
+}));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.prototype.error" id="apidoc.element.anyfs.anyfs.prototype.error">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>error
+        <span class="apidocSignatureSpan">(code, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (code, message) {
+    var err = new Error(message);
+    err.code = code;
+
+    return err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.prototype.getPlugins" id="apidoc.element.anyfs.anyfs.prototype.getPlugins">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>getPlugins
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPlugins = function () {
+    return this._plugins;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.anyfs.anyfs.prototype.resolve" id="apidoc.element.anyfs.anyfs.prototype.resolve">
+        function <span class="apidocSignatureSpan">anyfs.anyfs.prototype.</span>resolve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.options.cwd);
+
+    var p = path.resolve.apply(null, args);
+    p = path.join(this.options.root, p);
+
+    // fix windows
+    p = p.replace(/[\\\/]+/g, &#x27;/&#x27;);
+
+    // remove ending slash
+    if (p.length &#x3e; 1 &#x26;&#x26; p[p.length - 1] === &#x27;/&#x27;) {
+        p = p.substr(0, p.length - 1);
+    }
+
+    return p;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
